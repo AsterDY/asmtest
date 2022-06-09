@@ -20,4 +20,4 @@ package output
 
 //go:nosplit
 //go:noescape
-func __sum(a int32, b int32) (ret int64)
+func __sum(a int64, b int64) (ret int64)

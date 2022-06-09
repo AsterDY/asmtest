@@ -18,5 +18,5 @@ make clean && make all
 ```
 4. run go test
 ```
-go test -v 
+cd output && go test -v .
 ```

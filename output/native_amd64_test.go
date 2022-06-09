@@ -30,8 +30,8 @@ func TestMain(m *testing.M) {
 }
 
 func Test__sum(t *testing.T) {
-	var a = int32(1)
-	var b = int32(1)
+	var a = int64(1)
+	var b = int64(-1)
 	var c = __sum(a, b)
 	require.Equal(t, a+b, c)
 	t.Log(c)

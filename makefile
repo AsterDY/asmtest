@@ -1,7 +1,7 @@
 .PHONY: all clean
 TOOL_PATH = tool/asm2asm/asm2asm.py
 SRC_C_CODE := src/native/native.c
-OUT_X86_ASM := output/native.s
+OUT_X86_ASM := output/native/native.s
 OUT_GO_ASM := output/native_amd64.s
 OUT_GO_SUBR := output/native_subr_amd64.go
 
@@ -13,7 +13,6 @@ asmout: asmin
 
 all: asmout
 	asmfmt -w ${OUT_GO_ASM}
-	rm -f ${OUT_X86_ASM}
 
 clean:
 	rm -f ${OUT_X86_ASM} ${OUT_GO_ASM} ${OUT_GO_SUBR}

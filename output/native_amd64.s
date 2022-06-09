@@ -12,11 +12,10 @@ TEXT ·__native_entry__(SB), NOSPLIT, $0
 	RET
 
 _sum:
-	BYTE    $0x55               // pushq        %rbp
-	WORD    $0x8948; BYTE $0xe5 // movq         %rsp, %rbp
-	ADDL    SI, DI
-	MOVLQSX DI, AX
-	BYTE    $0x5d               // popq         %rbp
+	BYTE $0x55               // pushq        %rbp
+	WORD $0x8948; BYTE $0xe5 // movq         %rsp, %rbp
+	LEAQ 0(DI)(SI*1), AX
+	BYTE $0x5d               // popq         %rbp
 	RET
 
 TEXT ·__sum(SB), NOSPLIT | NOFRAME, $0 - 24
